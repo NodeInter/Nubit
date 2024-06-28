@@ -135,9 +135,17 @@ set_user_paths_and_ports() {
 export PATH=$HOME_DIR/go/bin:$PATH
 BINARY="$HOME_DIR/nubit-node/bin/nubit"
 BINARYNKEY="$HOME_DIR/nubit-node/bin/nkey"
-fi
+
 # Set paths and ports based on user
 set_user_paths_and_ports
+
+if ps -ef | grep -v grep | grep -w "nubit $NODE_TYPE" > /dev/null; then
+    echo "There is already a Nubit light node process running in your environment. The startup process has been stopped. To shut down the running process, please:"
+    echo "  Close the window/tab where it's running, or"
+    echo "  Go to the exact window/tab and press Ctrl + C (Linux) or Command + C (MacOS)"
+    exit 1
+fi
+
 dataPath=$STORE
 binPath=$HOME_DIR/nubit-node/bin
 if [ ! -f $binPath/nubit ] || [ ! -f $binPath/nkey ]; then
