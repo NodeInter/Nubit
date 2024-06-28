@@ -9,6 +9,10 @@ echo "
 ██   ████  ██████  ██████  ███████ ██ ██   ████    ██    ███████ ██   ██ 
 
 "
+NETWORK="nubit-alphatestnet-1"
+NODE_TYPE="light"
+VALIDATOR_IP="validator.nubit-alphatestnet-1.com"
+AUTH_TYPE="admin"
 
 # Function to detect user and set paths and ports
 set_user_paths_and_ports() {
@@ -127,11 +131,7 @@ set_user_paths_and_ports() {
             ;;
     esac
 }
-NETWORK="nubit-alphatestnet-1"
-NODE_TYPE="light"
-VALIDATOR_IP="validator.nubit-alphatestnet-1.com"
-AUTH_TYPE="admin"
-    
+   
 export PATH=$HOME_DIR/go/bin:$PATH
 BINARY="$HOME_DIR/nubit-node/bin/nubit"
 BINARYNKEY="$HOME_DIR/nubit-node/bin/nkey"
