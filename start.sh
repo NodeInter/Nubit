@@ -135,10 +135,9 @@ set_user_paths_and_ports() {
 export PATH=$HOME_DIR/go/bin:$PATH
 BINARY="$HOME_DIR/nubit-node/bin/nubit"
 BINARYNKEY="$HOME_DIR/nubit-node/bin/nkey"
-
+fi
 # Set paths and ports based on user
 set_user_paths_and_ports
-
 dataPath=$STORE
 binPath=$HOME_DIR/nubit-node/bin
 if [ ! -f $binPath/nubit ] || [ ! -f $binPath/nkey ]; then
