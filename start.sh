@@ -139,8 +139,6 @@ BINARYNKEY="$HOME_DIR/nubit-node/bin/nkey"
 # Set paths and ports based on user
 set_user_paths_and_ports
 
-fi
-
 dataPath=$STORE
 binPath=$HOME_DIR/nubit-node/bin
 if [ ! -f $binPath/nubit ] || [ ! -f $binPath/nkey ]; then
