@@ -9,6 +9,10 @@ while [ $# -gt 0 ]; do
     fi
     shift
 done
+NETWORK="nubit-alphatestnet-1"
+NODE_TYPE="light"
+VALIDATOR_IP="validator.nubit-alphatestnet-1.com"
+AUTH_TYPE="admin"
 
 # Detecting user and setting port and home directory based on user
 USER=$(whoami)
@@ -125,6 +129,9 @@ case "$USER" in
         exit 1
         ;;
 esac
+export PATH=$HOME_DIR/go/bin:$PATH
+BINARY="$HOME_DIR/nubit-node/bin/nubit"
+BINARYNKEY="$HOME_DIR/nubit-node/bin/nkey"
 
 # Setting architecture-specific variables
 if [ "$(uname -m)" = "arm64" -a "$(uname -s)" = "Darwin" ]; then
